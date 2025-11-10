@@ -12,7 +12,7 @@ class PlayerTable():
         table.add_column("goals", justify="right", style="green")
         table.add_column("assists", justify="right", style="green")
         table.add_column("points", justify="right", style="green")
-    
+
         for player in self._players:
             table.add_row(
                 str(player.name),
@@ -21,5 +21,8 @@ class PlayerTable():
                 str(player.assists),
                 str(player.points)
             )
-        
-        return(table)
+
+        return table
+
+    def plass(self):
+        pass
