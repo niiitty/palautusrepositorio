@@ -1,1 +1,1 @@
-Tevre
+Terve
