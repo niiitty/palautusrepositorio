@@ -1,8 +1,6 @@
 from tuomari import Tuomari
 
 class KiviPaperiSakset:
-    VOITTO_RAJA = 3
-
     def __init__(self):
         return True
 
@@ -12,11 +10,7 @@ class KiviPaperiSakset:
         ekan_siirto = self._ensimmaisen_siirto()
         tokan_siirto = self._toisen_siirto(ekan_siirto)
 
-        while (
-            self._onko_ok_siirto(ekan_siirto)
-            and self._onko_ok_siirto(tokan_siirto)
-            and not tuomari.voittaja(self.VOITTO_RAJA)
-        ):
+        while self._onko_ok_siirto(ekan_siirto) and self._onko_ok_siirto(tokan_siirto):
             tuomari.kirjaa_siirto(ekan_siirto, tokan_siirto)
             print(tuomari)
 
@@ -25,8 +19,6 @@ class KiviPaperiSakset:
 
         print("Kiitos!")
         print(tuomari)
-        if tuomari.voittaja(self.VOITTO_RAJA):
-            print(f"Peli päättyi – voittaja: {'Ensimmäinen' if tuomari.voittaja(self.VOITTO_RAJA) == 1 else 'Toinen'}")
 
     def _ensimmaisen_siirto(self):
         return input("Ensimmäisen pelaajan siirto: ")

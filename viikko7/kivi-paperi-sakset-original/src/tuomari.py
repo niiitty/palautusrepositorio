@@ -17,16 +17,6 @@ class Tuomari:
     def __str__(self):
         return f"Pelitilanne: {self.ekan_pisteet} - {self.tokan_pisteet}\nTasapelit: {self.tasapelit}"
 
-    def maksimi_pisteet(self):
-        return max(self.ekan_pisteet, self.tokan_pisteet)
-
-    def voittaja(self, tavoite=3):
-        if self.ekan_pisteet >= tavoite and self.ekan_pisteet > self.tokan_pisteet:
-            return 1
-        if self.tokan_pisteet >= tavoite and self.tokan_pisteet > self.ekan_pisteet:
-            return 2
-        return None
-
     # sisäinen metodi, jolla tarkastetaan tuliko tasapeli
     def _tasapeli(self, eka, toka):
         if eka == toka:
