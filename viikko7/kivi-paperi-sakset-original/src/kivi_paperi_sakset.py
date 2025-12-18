@@ -1,9 +1,6 @@
 from tuomari import Tuomari
 
 class KiviPaperiSakset:
-    def __init__(self):
-        return True
-
     def pelaa(self):
         tuomari = Tuomari()
 
